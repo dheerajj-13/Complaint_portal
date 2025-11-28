@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo large">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="active">User Dashboard</a>
+        <a href="complaint_form.html">New Complaint</a>
+        <a href="recent.html">Recent Complaints</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="sidebarThemeToggle" class="btn ghost full">Toggle Dark Mode</button>
+        <button class="btn danger full" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1>User Dashboard</h1>
+          <p class="subtitle">Overview of your complaints and city activity.</p>
+        </div>
+        <div class="header-right">
+          <input type="search" class="search-input" placeholder="Search complaints..." id="searchMyComplaints" />
+          <button class="btn primary" onclick="window.location.href='complaint_form.html'">+ New Complaint</button>
+        </div>
+      </header>
+
+      <section class="cards-grid">
+        <div class="stat-card">
+          <p>Total Complaints</p>
+          <h2 id="statTotal">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>Pending</p>
+          <h2 id="statPending">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>In Progress</p>
+          <h2 id="statWorking">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>Resolved</p>
+          <h2 id="statResolved">0</h2>
+        </div>
+      </section>
+
+      <section class="dashboard-main-grid">
+        <div class="large-panel">
+          <h2>Complaints over time</h2>
+          <canvas id="userTrendChart" height="160"></canvas>
+        </div>
+
+        <div class="large-panel">
+          <h2>Your complaints by category</h2>
+          <canvas id="userCategoryChart" height="160"></canvas>
+        </div>
+      </section>
+
+      <section class="table-panel">
+        <div class="panel-header">
+          <h2>My Recent Complaints</h2>
+        </div>
+        <table class="data-table" id="myComplaintsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+  <script src="js/user-dashboard.js"></script>
+</body>
+</html>

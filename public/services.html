@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="page">
+    <header class="top-nav">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="recent.html">Recent Complaints</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost" onclick="window.location.href='login.html'">Login</button>
+        <button class="btn primary" onclick="window.location.href='register.html'">Get Started</button>
+        <button id="themeToggle" class="icon-btn" title="Toggle dark mode">🌓</button>
+      </div>
+    </header>
+
+    <main class="section">
+      <h1>What you can do with CityCare</h1>
+      <p class="subtitle">A single portal for all your city-related complaints.</p>
+
+      <div class="cards-grid">
+        <div class="info-card">
+          <h3>Raise complaints</h3>
+          <p>Report roads, drainage, street light, garbage, and electricity issues in a few clicks.</p>
+        </div>
+        <div class="info-card">
+          <h3>Track status</h3>
+          <p>See whether your complaint is pending, in progress, or resolved – in real time.</p>
+        </div>
+        <div class="info-card">
+          <h3>Admin analytics</h3>
+          <p>Admins get a powerful dashboard with graphs, category breakdown, and weekly trends.</p>
+        </div>
+        <div class="info-card">
+          <h3>Dark mode</h3>
+          <p>Comfortable UI with light and dark themes, responsive on desktop and mobile.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="main-footer">
+      <p>© 2025 CityCare · Smart Complaint Management Portal</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo large">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">User Dashboard</a>
+        <a href="complaint_form.html" class="active">New Complaint</a>
+        <a href="recent.html">Recent Complaints</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="sidebarThemeToggle" class="btn ghost full">Toggle Dark Mode</button>
+        <button class="btn danger full" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1>New Complaint</h1>
+          <p class="subtitle">Describe the issue so the city team can take action.</p>
+        </div>
+      </header>
+
+      <section class="form-panel">
+        <form id="complaintForm" class="complaint-form">
+          <label>
+            Title
+            <input type="text" id="cTitle" required placeholder="Short summary (e.g., Pothole on main road)" />
+          </label>
+
+          <label>
+            Category
+            <select id="cCategory" required>
+              <option value="">Select category</option>
+              <option>Road</option>
+              <option>Drainage</option>
+              <option>Garbage</option>
+              <option>Street Light</option>
+              <option>Electricity</option>
+            </select>
+          </label>
+
+          <label>
+            Location
+            <input type="text" id="cLocation" required placeholder="Area / Street name" />
+          </label>
+
+          <label>
+            Priority
+            <select id="cPriority" required>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </label>
+
+          <label>
+            Description
+            <textarea id="cDescription" rows="4" required placeholder="Explain the issue and any additional details"></textarea>
+          </label>
+
+          <label class="image-field">
+            Image (optional)
+            <div class="image-actions">
+              <input type="file" id="cImage" accept="image/*" />
+              <button type="button" class="btn ghost" id="captureImageBtn">Capture Image</button>
+            </div>
+            <div class="camera-container" id="cameraContainer">
+              <video id="cameraStream" autoplay playsinline></video>
+              <div class="camera-controls">
+                <button type="button" class="btn primary" id="takePhotoBtn">Take Photo</button>
+                <button type="button" class="btn ghost" id="closeCameraBtn">Close</button>
+              </div>
+            </div>
+            <img id="capturedPreview" class="capture-preview" alt="Captured preview" />
+          </label>
+
+          <button type="submit" class="btn primary full">Submit Complaint</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+</body>
+</html>

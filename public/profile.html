@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo large">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">User Dashboard</a>
+        <a href="complaint_form.html">New Complaint</a>
+        <a href="recent.html">Recent Complaints</a>
+        <a href="profile.html" class="active">Profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="sidebarThemeToggle" class="btn ghost full">Toggle Dark Mode</button>
+        <button class="btn danger full" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1>My Profile</h1>
+          <p class="subtitle">View your account details and basic stats.</p>
+        </div>
+      </header>
+
+      <section class="profile-panel">
+        <div class="profile-main">
+          <div class="avatar-circle">U</div>
+          <div>
+            <h2 id="profileName">User Name</h2>
+            <p id="profileEmail" class="subtitle">user@example.com</p>
+          </div>
+        </div>
+
+        <div class="cards-grid profile-stats-grid">
+          <div class="stat-card status-card active" data-status="all">
+            <p>Total Complaints</p>
+            <h2 id="profileTotal">0</h2>
+          </div>
+          <div class="stat-card status-card" data-status="resolved">
+            <p>Resolved</p>
+            <h2 id="profileResolved">0</h2>
+          </div>
+          <div class="stat-card status-card" data-status="pending">
+            <p>Pending</p>
+            <h2 id="profilePending">0</h2>
+          </div>
+        </div>
+      </section>
+
+      <section class="profile-complaints-panel">
+        <div class="profile-complaints-header">
+          <div>
+            <h2>Complaint Activity</h2>
+            <p class="subtitle">Tap a status box or use the filters to explore your complaints.</p>
+          </div>
+          <div class="status-filter">
+            <button type="button" class="btn ghost small active" data-status-filter="all">All</button>
+            <button type="button" class="btn ghost small" data-status-filter="resolved">Resolved</button>
+            <button type="button" class="btn ghost small" data-status-filter="pending">Pending</button>
+          </div>
+        </div>
+        <div id="profileComplaintsList" class="profile-complaints-list empty-state">
+          Select a status to view complaints.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "citycare-complaint-portal",
+  "version": "1.0.0",
+  "description": "CityCare Smart Complaint Management Portal - Frontend with simple Node static server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0"
+  }
+}

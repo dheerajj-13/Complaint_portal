@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo large">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="dashboard.html">User Dashboard</a>
+        <a href="complaint_form.html">New Complaint</a>
+        <a href="recent.html" class="active">Recent Complaints</a>
+        <a href="profile.html">Profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="sidebarThemeToggle" class="btn ghost full">Toggle Dark Mode</button>
+        <button class="btn danger full" id="logoutBtn">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1>Recent Complaints</h1>
+          <p class="subtitle">See the latest complaints submitted by citizens.</p>
+        </div>
+        <div class="header-right">
+          <input type="search" class="search-input" placeholder="Search complaints..." id="searchRecent" />
+        </div>
+      </header>
+
+      <section class="cards-list" id="recentList">
+        <!-- Filled by JS -->
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+</body>
+</html>

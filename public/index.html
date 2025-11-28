@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="page">
+    <header class="top-nav">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare</span>
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="recent.html">Recent Complaints</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn ghost" onclick="window.location.href='login.html'">Login</button>
+        <button class="btn primary" onclick="window.location.href='register.html'">Get Started</button>
+        <button id="themeToggle" class="icon-btn" title="Toggle dark mode">🌓</button>
+      </div>
+    </header>
+
+    <main class="hero-layout">
+      <section class="hero-text">
+        <p class="pill">Smart City • Citizen First</p>
+        <h1>Raise complaints in seconds. <span class="highlight">See action in real-time.</span></h1>
+        <p class="subtitle">
+          CityCare is a smart complaint management portal where you can report issues like
+          road potholes, drainage, garbage, street lights and more – all from a single dashboard.
+        </p>
+        <div class="hero-actions">
+          <button class="btn primary" onclick="window.location.href='register.html'">Report an issue</button>
+          <button class="btn ghost" onclick="window.location.href='login.html'">Go to dashboard</button>
+        </div>
+        <div class="hero-meta">
+          <div>
+            <h3>24x7</h3>
+            <p>Report anytime</p>
+          </div>
+          <div>
+            <h3>5+</h3>
+            <p>Issue categories</p>
+          </div>
+          <div>
+            <h3>Track</h3>
+            <p>Live complaint status</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-preview">
+        <div class="complaint-insights-card">
+
+          <div class="ci-left">
+            <p class="ci-pill">Live city overview</p>
+            <h2 class="ci-title">Your complaints are shaping a better city.</h2>
+            <p class="ci-text">
+              Track how different issues are being reported in real-time.
+              Each bar shows the share of complaints by category today.
+            </p>
+
+            <div class="ci-highlights">
+              <div class="ci-highlight-item">
+                <span class="ci-highlight-label">Most reported</span>
+                <span class="ci-highlight-value" id="mostReportedLabel">Drainage</span>
+              </div>
+              <div class="ci-highlight-item">
+                <span class="ci-highlight-label">Fastest to resolve</span>
+                <span class="ci-highlight-value">Street Light</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ci-right">
+            <div class="ci-bars-title">Today’s complaint mix</div>
+
+            <div class="ci-bars" id="landingBars">
+              <div class="ci-bar" style="--value: 78%;">
+                <div class="ci-bar-fill"></div>
+                <span class="ci-bar-percent">78%</span>
+                <span class="ci-bar-label">Drainage</span>
+              </div>
+
+              <div class="ci-bar" style="--value: 64%;">
+                <div class="ci-bar-fill"></div>
+                <span class="ci-bar-percent">64%</span>
+                <span class="ci-bar-label">Garbage</span>
+              </div>
+
+              <div class="ci-bar" style="--value: 42%;">
+                <div class="ci-bar-fill"></div>
+                <span class="ci-bar-percent">42%</span>
+                <span class="ci-bar-label">Road</span>
+              </div>
+
+              <div class="ci-bar" style="--value: 35%;">
+                <div class="ci-bar-fill"></div>
+                <span class="ci-bar-percent">35%</span>
+                <span class="ci-bar-label">Street Light</span>
+              </div>
+
+              <div class="ci-bar" style="--value: 29%;">
+                <div class="ci-bar-fill"></div>
+                <span class="ci-bar-percent">29%</span>
+                <span class="ci-bar-label">Electricity</span>
+              </div>
+            </div>
+
+            <p class="ci-footnote">
+              Sample demo data – live numbers appear after login based on real complaints.
+            </p>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <p>© 2025 CityCare · Smart Complaint Management Portal</p>
+    </footer>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+</body>
+</html>

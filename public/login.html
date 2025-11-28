@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="auth-page">
+    <div class="auth-card">
+      <div class="auth-header">
+        <div class="logo">
+          <span class="logo-dot"></span>
+          <span class="logo-text">CityCare</span>
+        </div>
+        <h2>Welcome back</h2>
+        <p class="subtitle">Login to track and manage your city complaints.</p>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <label>
+          Email
+          <input type="email" id="loginEmail" required placeholder="you@example.com" />
+        </label>
+        <label>
+          Password
+          <input type="password" id="loginPassword" required placeholder="••••••••" />
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" id="loginAsAdmin" />
+          <span>Login as admin</span>
+        </label>
+        <button type="submit" class="btn primary full">Login</button>
+      </form>
+
+      <p class="auth-footer-text">
+        Don’t have an account?
+        <a href="register.html">Create one</a>
+      </p>
+
+      <div class="info-card small">
+        <p><strong>Demo Admin:</strong> admin@citycare.com / admin123</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

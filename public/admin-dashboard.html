@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CityCare – Smart Complaint Portal</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body class="light">
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo large">
+        <span class="logo-dot"></span>
+        <span class="logo-text">CityCare Admin</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="admin-dashboard.html" class="active">Admin Dashboard</a>
+        <a href="recent.html">Recent Complaints</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <button id="sidebarThemeToggleAdmin" class="btn ghost full">Toggle Dark Mode</button>
+        <button class="btn danger full" id="logoutBtnAdmin">Logout</button>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="content-header">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p class="subtitle">Monitor all city complaints and update their status.</p>
+        </div>
+        <div class="header-right">
+          <input type="search" class="search-input" placeholder="Search complaints..." id="searchAllComplaints" />
+        </div>
+      </header>
+
+      <section class="cards-grid">
+        <div class="stat-card">
+          <p>Total Complaints</p>
+          <h2 id="adminTotal">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>Pending</p>
+          <h2 id="adminPending">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>In Progress</p>
+          <h2 id="adminWorking">0</h2>
+        </div>
+        <div class="stat-card">
+          <p>Resolved</p>
+          <h2 id="adminResolved">0</h2>
+        </div>
+      </section>
+
+      <section class="dashboard-main-grid">
+        <div class="large-panel">
+          <h2>Complaints by Category</h2>
+          <canvas id="adminCategoryChart" height="160"></canvas>
+        </div>
+
+        <div class="large-panel">
+          <h2>Weekly Complaints Trend</h2>
+          <canvas id="adminTrendChart" height="160"></canvas>
+        </div>
+
+        <div class="large-panel circle-panel">
+          <h2>Category Mix Meter</h2>
+          <div class="meter-wrapper">
+            <div class="meter-circle">
+              <div class="meter-inner">
+                <span id="topCategoryLabel">Drainage</span>
+                <small>Top category</small>
+              </div>
+            </div>
+            <ul class="meter-legend" id="meterLegend">
+              <!-- Filled by JS -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="table-panel">
+        <div class="panel-header">
+          <h2>All Complaints</h2>
+        </div>
+        <table class="data-table" id="allComplaintsTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>User</th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Created</th>
+              <th>Update</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/theme.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/complaint.js"></script>
+  <script src="js/admin-dashboard.js"></script>
+</body>
+</html>
